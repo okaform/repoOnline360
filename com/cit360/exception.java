@@ -44,7 +44,7 @@ public class exception {
                 System.out.print("Number 2/Denominator: ");
                 input = userInput.nextLine();
                 num2 = Integer.parseInt(input);
-                if(num2 == 0) {
+                if(num2 == 0) { //data validation to make sure that the denominator is not zero
                     System.out.println("You typed\" " + input + "\". The computer cannot divide by zero. " +
                             "\nEnter a number that's not zero.");
                 }
@@ -72,7 +72,6 @@ public class exception {
         float divide = doDivision(num1, num2);
         //Return the result
         System.out.println(num1 + " / " +num2 + " = " + divide);
-
 
         System.out.println("------------------------- THE END. -------------------------");
     }
