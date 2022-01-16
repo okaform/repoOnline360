@@ -19,6 +19,11 @@ public class set {
         System.out.println("The printed results will be 1, 4, 2, 5, 3, 4, 2, 3, 5 as shown below: ");
         System.out.println(list);
 
+        //sorted.
+        System.out.println("When it is sorted, it will be be - ");
+        Collections.sort(list);
+        System.out.println(list);
+
 
         //Queue
         System.out.println("\n\n\n----------Queue-----------");
