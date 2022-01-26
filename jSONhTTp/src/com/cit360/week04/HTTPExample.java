@@ -50,12 +50,15 @@ public class HTTPExample {
 
 
     public static void main(String[] args) {
-        System.out.println(HTTPExample.getHTTPContent("gsfgsdfgsdfgsfgsfdgsdfgsdg"));
+        System.out.println(HTTPExample.getHTTPContent("http://localhost:8500")); //reach out to the server
 
-        Map<Integer, List<String>> m = HTTPExample.getHttpHeaders("http://www.google.com");
+
+
+
+       /* Map<Integer, List<String>> m = HTTPExample.getHttpHeaders("http://www.google.com");
 
         for (Map.Entry<Integer, List<String>> entry: m.entrySet()) {
             System.out.println("Key= " + entry.getKey() + "value= " + entry.getValue());
-        }
+        }*/
     }
 }
