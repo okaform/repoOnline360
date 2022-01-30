@@ -77,7 +77,7 @@ public class JavaHTTPServer {
             response = getJson;
         }
 
-        System.out.println(response);
+        //System.out.println(response);
         exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
         OutputStream os = exchange.getResponseBody();
 
