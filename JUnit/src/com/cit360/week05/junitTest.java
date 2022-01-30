@@ -51,7 +51,13 @@ public class junitTest {
         return listOfNames.get(listNo);
     }
 
-    //Test for assertNotSame. The two string look the same but point to different objects.
+    /*Test for assertNotSame. The two string look the same but point to different objects.
+    although they look the same the strings refer to different objects and not the same
+    string literal. for example
+    if String myState = "Delta" and
+    String myStateAlso = "Delta" then they would be the same because they refer to the same
+    string literal. In this example however, they look the same but refer to different
+    String objects.*/
     public String [] sameState() {
        String myState = new String("Delta");
        String myStateAlso = new String("Delta");
