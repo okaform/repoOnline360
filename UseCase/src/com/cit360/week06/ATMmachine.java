@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 
 public class ATMmachine {
-    // Declaring ANSI_RESET so that we can reset the color
+    // Declaring RESET so that we can reset the color
     public static final String RESET = "\u001B[0m";
 
     // Declaring the color
     // Custom declaration
     public static final String RED = "\u001B[31m";
+
+    //For YELLOW
+    public static final String YELLOW = "\\u001B[33m\t";
 
     public static void main(String[] args) {
         // Create the accounts with array
@@ -26,12 +29,12 @@ public class ATMmachine {
         int exitProgram = 0;
         while (exitProgram != 14) {
             //Ask the User to enter an Id
-            System.out.println(" Enter Your Bank Id: \n" +
-                             "14. End the program. ");
+            System.out.println(" Enter Your Bank ID (0-9) " +
+                             "OR type "+RED+"14 "+RESET+"and press Enter to End the program. ");
             Scanner input = new Scanner(System.in);
             int userId = input.nextInt();
             int correctId = 0;
-            //add a counter so we don't run Enter your bank Id twice in the statement.
+            //add a counter, so we don't run Enter your bank ID twice in the statement.
             int counter = 0;
 
             int counter1 = 0;
@@ -48,8 +51,8 @@ public class ATMmachine {
                     if (counter == 0) {
                         counter++;
                     } else {
-                        System.out.println("\nEnter Your Bank Id: \n" +
-                                         "14. End the program. ");
+                        System.out.println("\nEnter Your Bank ID (0-9) " +
+                                         " OR type "+RED+"14 "+RESET+"and Press Enter End the program. ");
                         userId = input.nextInt();
                         counter++;
                         if (userId == 14) {
@@ -89,8 +92,8 @@ public class ATMmachine {
                                 }
                         } else { //ask the user for their name and password and let them into their account
                                 System.out.println("Welcome! Please put your name and password to log in.");
-                                String logName = "a random name you will never guess unless you look at the code";
-                                String logPass = "a random password you will never guess unless you look at the code";
+                                String logName;
+                                String logPass;
                                 boolean hasPassed = true;
                                 while(hasPassed) { //(logName.equals(namePassword[i].getName())) && (logPass.equals(namePassword[i].getPassword()))
                                     input.nextLine(); //clear the name output
@@ -100,16 +103,10 @@ public class ATMmachine {
                                     logPass = input.nextLine();
 
                                     //These will only run when the name or password is incorrect.
-                                    if (!(logName.equals(namePassword[i].getName()))) {
-                                        System.out.println("The name is not matching. Please Try again");
+                                    if (!(logName.equals(namePassword[i].getName())) || !(logPass.equals(namePassword[i].getPassword()))) {
+                                        System.out.println("The name and/or password is not matching. Please Try again");
                                     }
                                     //Adding the hasPassed boolean makes sure the user is give the chance to add their names
-                                    else{
-                                        hasPassed = false;
-                                    }
-                                    if (!(logPass.equals(namePassword[i].getPassword()))) {
-                                        System.out.println("The password is incorrect. Please Try again");
-                                    }
                                     else{
                                         hasPassed = false;
                                     }
@@ -128,7 +125,7 @@ public class ATMmachine {
                 while (userId != accountStorage[correctId].getId());
 
 
-                int choice = 0;
+                String choice = "";
                 int counter2 = 0;
                 do {
                     if (counter2 == 0) {
@@ -140,26 +137,25 @@ public class ATMmachine {
                                 + "\n3: deposit"
                                 + "\n4: exit"
                                 + "\nEnter a choice: ");
-                        choice = input.nextInt();
+                        choice = input.nextLine();
                         counter2++;
                         //Selection for Choices
-                        if (choice == 1) {
-                            System.out.printf("The balance is $%.2f\n", accountStorage[correctId].getBalance());
+                        if (choice.equals("1")) {
+                            System.out.printf("Your balance is $%.2f\n", accountStorage[correctId].getBalance());
                             counter2--;
-                        } else if (choice == 2) {
-                            System.out.print("Enter an amount to withdraw: ");
-                            double withdrawMoney = input.nextDouble();
+                        } else if (choice.equals("2")) {
+                            double currentBal = accountStorage[correctId].getBalance();
+                            double withdrawMoney = Calculations.checkWithdrawal(currentBal);
                             accountStorage[correctId].withdraw(withdrawMoney);
                             counter2--;
-                        } else if (choice == 3) {
-                            System.out.print("Enter an amount to deposit: ");
-                            double depositMoney = input.nextDouble();
+                        } else if (choice.equals("3")) {
+                            double depositMoney = Calculations.checkDeposit();
                             accountStorage[correctId].deposit(depositMoney);
                             counter2--;
-                        } else if (choice == 4) {
+                        } else if (choice.equals("4")) {
                             break;
-                        } else {
-                            System.out.println("Invalid Input. Try again.");
+                        } else { //Data Validation to make sure it only accepted inputs are 1,2,3,4
+                            System.out.println(RED+ "Invalid Input. Try again." +RESET);
                             counter2--;
                         }
 
@@ -168,13 +164,13 @@ public class ATMmachine {
                     //Selection to continue
                     else {
                         counter2++;
-                        continue;
+                        //continue;
 
                     }
 
                 }
 
-                while (choice != 4);
+                while (!(choice.equals("4")));
 
 
             }
