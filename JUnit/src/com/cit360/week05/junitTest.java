@@ -77,10 +77,12 @@ public class junitTest {
     public static ArrayList<String[]> arrayOfNames() {
         String [] names1 = {"Pepa", "Mirabel", "Bruno", "Delores"};
         String [] names2 = {"Pepa", "Mirabel", "Bruno", "Delores"};
+        String [] names3 = {"Pepa", "Mirabel", "Bruno", "Delores", "Luisa"};
 
         ArrayList<String[]> listOfArray = new ArrayList<String []>();
         listOfArray.add(names1);
         listOfArray.add(names2);
+        listOfArray.add(names3);
 
         return listOfArray;
     }
