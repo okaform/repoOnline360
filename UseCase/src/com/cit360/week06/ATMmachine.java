@@ -104,7 +104,7 @@ public class ATMmachine {
 
                                     //These will only run when the name or password is incorrect.
                                     if (!(logName.equals(namePassword[i].getName())) || !(logPass.equals(namePassword[i].getPassword()))) {
-                                        System.out.println("The name and/or password is not matching. Please Try again");
+                                        System.out.println("The name and/or password is not matching. Press Enter and Try again");
                                     }
                                     //Adding the hasPassed boolean makes sure the user is give the chance to add their names
                                     else{

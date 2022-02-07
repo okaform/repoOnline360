@@ -136,7 +136,7 @@ class someJUnitTest {
         assertThat(output, isA(int.class));
     }
 
-    //Test 9.
+    //Test 9. AssertArrayEquals
     @org.junit.jupiter.api.Test
     void arrayOfNames() {
         junitTest test = new junitTest();
