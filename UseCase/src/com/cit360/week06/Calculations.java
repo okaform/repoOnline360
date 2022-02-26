@@ -8,6 +8,8 @@ import java.util.Scanner;
 import static com.cit360.week06.ATMmachine.RED;
 import static com.cit360.week06.ATMmachine.RESET;
 
+
+
 public class Calculations {
     //This is for when the withdrawal option is selected
     public static double checkWithdrawal( double currentBalance) {
