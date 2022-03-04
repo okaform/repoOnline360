@@ -92,7 +92,7 @@ public class GetEmployee {
 
         //commit the transaction
         session.getTransaction().commit();
-        //HibernateUtils.shutdown();
+        //HibernateUtils.shutdown(); //I took this out of here because when this closes I can't start the session anymore. I moved it to FullEmployee.java option 5 for exit
         System.out.println("User has been added Successfully");
 
     }
