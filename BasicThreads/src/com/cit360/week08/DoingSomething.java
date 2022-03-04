@@ -37,8 +37,9 @@ public class DoingSomething implements Runnable {
             if (count % number == 0) {
                 System.out.print(name + " is sleeping. ");
                 try{
-                    /*System.out.println("Current Thread for " + name +" is - " +Thread.currentThread().getName());
-                    */Thread.sleep(sleep);
+                    //System.out.println("Current Thread for " + name +" is - " +Thread.currentThread().getName());
+                    //System.out.println("Testing " + Thread.currentThread().getName().split("-")[3]);
+                    Thread.sleep(sleep);
                 }
                 catch (InterruptedException ie) {
                     System.err.println(ie.toString());
