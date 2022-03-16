@@ -1,0 +1,72 @@
+/*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+/               General styles for the welcome page                    /
+/                                                                /
+/*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  */
+body { font-size: 18px; background-color: #F1FAEE; }
+
+h1, h2, h3, h4, h5, h6 { font-family: "Ubuntu", sans-serif; }
+
+p, span, a, button, form { font-family: "Comic Neue", cursive; }
+
+/* For the welcome container */
+.stickyContainer { background-color: #7C4747;  position: fixed; left: 0; right: 0; z-index: 4; color: #F1FAEE; font-weight: bold; }
+
+.stickyContainer h2 { text-align: center;}
+
+
+main { width: 70%; margin: 0 auto; background-color: #F1FAEE; }
+
+main h2 { text-align: center; margin: 0.5em; }
+
+main hr { margin: 0 15%; }
+
+/* for the banner */
+picture img { width: 100%; }
+
+/* THis is for the footer section */
+footer { margin: 0 auto; padding: 0; background-color: #7C4747; padding: 5px; text-align: center; color: white; font-weight: bold; /* For the span so that it can change to inline when we are in medium view */ }
+
+/* For the credit card form */
+/*Form*/
+form fieldset { margin: 1.8em 0; border: 2px solid #454955; border-radius: 10px; background-color: #DCE1E9;  padding: .5rem 2%; }
+
+form legend { font-size: 1.3em; margin: 0 1rem; padding: 0 .5rem; }
+
+form label.top { display: block; padding-top: 1em; font-size: 1em; }
+
+
+form label.top input { -webkit-appearance: none; display: block; font-size: 1em; border-radius: 4px; padding: .75rem; width: 87%; max-width: 20em; }
+
+/* for the submit button */
+form input.submitBtn { font-weight: bold; border: none; background-color:  #357266;; color: #F1FAEE; border-radius: 1rem; padding: .5rem 1rem; margin: 0 0 2rem 2%; width: 96%; max-width: 18em; cursor: pointer; }
+
+form input.submitBtn:hover { background-color: #E63946; }
+
+/* higlight the required inputs */
+form label.top input:required { border-left: red solid 6px; }
+
+/* Change the color when it passes the test */
+form label.top input:required:valid { border-left: #35502B solid 6px; }
+
+/*For the select option*/
+form label.top select { display: block;  border-radius: 4px; padding: 0.75rem;  max-width: 20em;}
+
+div.selectOption { display: grid; grid-template-columns: 1fr 1fr; width: 10em; grid-gap: 0.4em;}
+
+form label#month { padding-top: 0.1em;}
+
+form label#year { padding-top: 0.1em;}
+
+form label#month select {font-size: 1em; grid-column: 1/2; }
+
+form label#year select { grid-column: 2/3; }
+
+
+/*For the Project*/
+.hold-account-info {
+    margin-top: 4em;
+}
+
+
+
+/* END OF FILE>>EOF*/

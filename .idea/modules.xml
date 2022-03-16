@@ -9,8 +9,10 @@
       <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseCase/UseCase.iml" filepath="$PROJECT_DIR$/UseCase/UseCase.iml" />
       <module fileurl="file://$PROJECT_DIR$/database1/database1.iml" filepath="$PROJECT_DIR$/database1/database1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forTestingFast/forTestingFast.iml" filepath="$PROJECT_DIR$/forTestingFast/forTestingFast.iml" />
       <module fileurl="file://$PROJECT_DIR$/jSONhTTp/jSONhTTp.iml" filepath="$PROJECT_DIR$/jSONhTTp/jSONhTTp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/repoOnline360.iml" filepath="$PROJECT_DIR$/.idea/repoOnline360.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake_project/snake_project.iml" filepath="$PROJECT_DIR$/snake_project/snake_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>

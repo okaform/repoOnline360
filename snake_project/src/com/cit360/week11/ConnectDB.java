@@ -1,6 +1,5 @@
-package com.cit360.week09.DB;
+package com.cit360.week11;
 
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -25,14 +24,14 @@ public class ConnectDB {
     }
 
     //Used to get more than one employee from the database
-    public List<EmployeeEntity> getEmployees() {
+    public List<UserInfoEntity> getUsers() {
         try {
             session = factory.openSession();
             session.getTransaction().begin();
-            String sql = "from com.cit360.week09.DB.EmployeeEntity";
-            List<EmployeeEntity> emp = (List<EmployeeEntity>)session.createQuery(sql).getResultList();
+            String sql = "from com.cit360.week11.UserInfoEntity";
+            List<UserInfoEntity> users = (List<UserInfoEntity>)session.createQuery(sql).getResultList();
             session.getTransaction().commit();
-            return emp;
+            return users;
         }
 
         catch (Exception e) {
@@ -47,14 +46,14 @@ public class ConnectDB {
     }
 
     //get a single employee
-    public EmployeeEntity getEmployee(int id) {
+    public UserInfoEntity getUser(int id) {
         try {
             session = factory.openSession();
             session.getTransaction().begin();
-            String sql = "from com.cit360.week09.DB.EmployeeEntity where id=" + Integer.toString(id);
-            EmployeeEntity emp = (EmployeeEntity)session.createQuery(sql).getSingleResult();
+            String sql = "from com.cit360.week11.UserInfoEntity where id=" + Integer.toString(id);
+            UserInfoEntity users = (UserInfoEntity)session.createQuery(sql).getSingleResult();
             session.getTransaction().commit();
-            return emp;
+            return users;
         }
         catch (Exception e) {
             e.printStackTrace();

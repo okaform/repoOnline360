@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="snake_project:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/snake_project_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="snake_project" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Hibernate 5.4.11-5.4.11 (2)" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:8.0.27" />
+          <element id="library" level="module" name="JUnit5.4" module-name="snake_project" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="snake_project/web/Web" />
+    </root>
+  </artifact>
+</component>

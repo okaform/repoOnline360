@@ -81,7 +81,7 @@ public class GetEmployee {
 
         //Add new Employee
         EmployeeEntity emp = new EmployeeEntity();
-        //Since the IDs auto increment, there's no need for for setID.
+        //Since the IDs auto increment, there's no need  for setID.
         emp.setFirstName("Kara");
         emp.setLastName("Zo-el");
         emp.setAge(25);
