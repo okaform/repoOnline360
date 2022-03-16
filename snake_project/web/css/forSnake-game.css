@@ -1,0 +1,21 @@
+
+
+/*for the snakeboard*/
+#snake-game-Canvas {
+    display: block;
+    margin: 0 auto;
+/*    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+#score {
+    text-align: center;
+    font-size: 2em;
+}
+
+#snake-game-popup {
+    background-color: bisque;
+    color: black;
+}

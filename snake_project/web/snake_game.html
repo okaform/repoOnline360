@@ -7,12 +7,14 @@
     <meta name="description" content="A Work in Progress for Servlet">
     <link rel="stylesheet" href="css/correct.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forSnake-game.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
     <title>Welcome to Marvel's Snake Game. </title>
 </head>
 <body>
 <div class="stickyContainer">
 
+    <!--I got the resources for building this game here https://www.educative.io/blog/javascript-snake-game-tutorial-->
     <h2> <span id="snake-game-theUser">User</span> Welcome to Marvel's Snake Game. </h2>
 
 </div>
@@ -20,6 +22,13 @@
     <img src="images/nintendo-crop.jpg" alt="banner image" />
 </picture>
 <main>
+    <div id="snake-game-score">0</div>
+    <canvas id="snake-game-Canvas" width="400" height="400"></canvas>
+
+    <div id="snake-game-popup">
+    <p class="snake-game-died">You died :(</p>
+        <button>Play Again?</button>
+    </div>
 
 
 
@@ -32,5 +41,7 @@
         <span>CIT 360 BYU - I</span>
 </footer>
 <script src="js/forPostPages.js"></script>
+<script src="js/for-snake-game.js"></script>
+<script src="js/score.js"></script>
 </body>
 </html>
