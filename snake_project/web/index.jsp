@@ -34,9 +34,9 @@
         <fieldset class="login">
           <legend>Login</legend>
           <form action="submitLogin" method="post">
-            <label class="top">Username*: <input type="text" name="Lusername"
+            <label class="top">Username*: <input type="text" name="Lusername" required
                                 id="userLog"                          title="Put your username" ></label>
-            <label class="top">Password*: <input type="password" name="Lpass"
+            <label class="top">Password*: <input type="password" name="Lpass" required
                                                  title="Put your Password" ></label>
 
               <input  class="submitBtn-login" type="submit" value="Login">

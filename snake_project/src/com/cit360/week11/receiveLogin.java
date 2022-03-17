@@ -75,7 +75,7 @@ public class receiveLogin extends HttpServlet {
             System.out.println("Correct. Welcome to the Game.");
             out.println(    "<script>" +
                     "localStorage.getUsername = \"" +username + "\";\n" +
-                    "window.location.href = \"http://localhost:8080/snake_project_war_exploded/snake_game.html\""+
+                    "window.location.href = \"http://localhost:8080/snake_project_war_exploded/snake_game\""+
                     "</script>" );
         }
 

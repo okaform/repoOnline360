@@ -22,16 +22,35 @@
     <img src="images/nintendo-crop.jpg" alt="banner image" />
 </picture>
 <main>
-    <div id="snake-game-score">0</div>
-    <canvas id="snake-game-Canvas" width="400" height="400"></canvas>
+    <div id="snake-game-parent">
+       <p class="right-align">Score: <span id="snake-game-score">0</span> </p>
+        <canvas id="snake-game-Canvas" width="400" height="400"></canvas>
+        <p>Highscore: <span id="snake-game-highscore">0</span> </p>
 
-    <div id="snake-game-popup">
-    <p class="snake-game-died">You died :(</p>
-        <button>Play Again?</button>
     </div>
 
 
+    <div id="snake-game-popup">
+        <div class="snake-game-container">
+            <p class="snake-game-died">You died :(</p>
+            <button onclick="startGameAgain()">Play Again?</button>
+        </div>
+    </div>
 
+    <div id="snake-game-paused">
+        <div class="snake-game-container">
+            <p class="snake-game-died">[Paused]</p>
+            <button>Press [Space Bar] to unpause. </button>
+        </div>
+    </div>
+
+    <!--for sending the scores to the servlet-->
+        <form class="form-scores" name="form-scores" action="snake_game" method="post">
+            <label>username*: <input type="text" name="username" id="snake-game-form-username"></label>
+            <label>curr_score*: <input type="text" name="curr_score" id="snake-game-form-curr_score" ></label>
+            <label>high_score*: <input type="text" name="high_score" id="snake-game-form-high-score"></label>
+
+        </form>
 
 </main>
 

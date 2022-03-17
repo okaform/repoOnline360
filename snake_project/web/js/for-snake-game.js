@@ -1,5 +1,46 @@
 
 
+
+//ONLY START WHEN AN ARROW KEY HAS BEEN PRESSED
+let counter = 0;
+
+document.onkeydown = function(e) {
+    //run main() to start the game
+    switch (e.keyCode) {
+        case 37:
+
+            if (counter == 0) {
+                main();
+                counter++;
+            }
+            break;
+        case 38:
+
+            if (counter == 0) {
+                main();
+                counter++;
+            }
+            break;
+        case 39:
+
+            if (counter == 0) {
+                main();
+                counter++;
+            }
+            break;
+        case 40:
+
+            if (counter == 0) {
+                main();
+                counter++;
+            }
+            break;
+    }
+}
+
+//END OF KEY PRESSED.
+
+
 //THe JavaScript for the snake game
 
 
@@ -18,6 +59,8 @@ let snake = [ {x:200, y:200}
               ,{x:150, y:200} ];
 
 let score = 0;
+let highscore = document.getElementById("snake-game-highscore").innerText;
+
 
 //True if changing direction
 let changing_direction = false;
@@ -34,10 +77,16 @@ const snakeboard = document.getElementById("snake-game-Canvas");
 //return a 2-d dimensional drawing context
 const snakeboard_ctx = snakeboard.getContext("2d");
 
-//start the game
-main();
-
+//load the screen
 gen_food();
+clearCanvas();
+drawFood();
+drawSnake();
+
+
+//start the game
+//main();
+
 
 //list for when the key is pressed and call the change_direction variable
 document.addEventListener("keydown", change_direction);
@@ -45,7 +94,10 @@ document.addEventListener("keydown", change_direction);
 //main function that keeps the game running
 function main() {
     //check if any of the variables in has_game_ended is true, then stop the game
-    if (has_game_ended()) return;
+    if (has_game_ended()) {
+        document.getElementById("snake-game-popup").style.display = "block";
+        return;
+    }
 
     //TODO: when the game ends, create a pop up from a div that shows the game has ended that asks the user
     //to start again and displays their score.
@@ -190,9 +242,15 @@ function move_snake() {
     if (has_eaten_food) {
         //increase score
         score += 9;
-
         //display the score on the screen
         document.getElementById("snake-game-score").innerText = score;
+
+        //increase the score of the high score only if the current score is greater than it
+        if (score >= highscore) {
+            document.getElementById("snake-game-highscore").innerText = score;
+        }
+
+
 
         //generate new food location
         gen_food();
@@ -205,3 +263,34 @@ function move_snake() {
     //vertical movement
 }
 
+
+//TODO: I need to finish the space bar as well
+//for space bar
+document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+        console.log('Space pressed'); //whatever you want to do when space is pressed
+    }
+})
+
+
+//This function starts the game again after dying
+function startGameAgain() {
+    //get the username
+    username = document.getElementById("snake-game-theUser").innerText;
+    //get the current score
+    curr_score = document.getElementById("snake-game-score").innerText;
+    //get the high score displayed
+    high_score = document.getElementById("snake-game-highscore").innerText;
+
+    //change the value of the forms to the value from the game
+
+    document.getElementById("snake-game-form-username").value = username;
+    document.getElementById("snake-game-form-curr_score").value = curr_score;
+    document.getElementById("snake-game-form-high-score").value = high_score;
+
+    document.forms[0].submit();
+
+    //This reloads the page and starts the game again. It does the reload from cache
+    //document.location.reload(false);
+
+}

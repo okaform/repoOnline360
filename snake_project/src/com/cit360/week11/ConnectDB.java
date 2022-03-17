@@ -23,7 +23,7 @@ public class ConnectDB {
         return single_instance;
     }
 
-    //Used to get more than one employee from the database
+    //Used to get more than one user from the database
     public List<UserInfoEntity> getUsers() {
         try {
             session = factory.openSession();
@@ -45,7 +45,7 @@ public class ConnectDB {
         }
     }
 
-    //get a single employee
+    //get a single user
     public UserInfoEntity getUser(int id) {
         try {
             session = factory.openSession();
@@ -54,6 +54,49 @@ public class ConnectDB {
             UserInfoEntity users = (UserInfoEntity)session.createQuery(sql).getSingleResult();
             session.getTransaction().commit();
             return users;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            //rollback the database in case of error
+            session.getTransaction().rollback();
+            return null;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    //multiple scores
+    public List<ScoreTableEntity> getScores() {
+        try {
+            session = factory.openSession();
+            session.getTransaction().begin();
+            String sql = "from com.cit360.week11.ScoreTableEntity";
+            List<ScoreTableEntity> scores = (List<ScoreTableEntity>)session.createQuery(sql).getResultList();
+            session.getTransaction().commit();
+            return scores;
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+            //rollback the database in case of error
+            session.getTransaction().rollback();
+            return null;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    //get a single score
+    public ScoreTableEntity getScore(int id) {
+        try {
+            session = factory.openSession();
+            session.getTransaction().begin();
+            String sql = "from com.cit360.week11.ScoreTableEntity where id=" + Integer.toString(id);
+            ScoreTableEntity score = (ScoreTableEntity)session.createQuery(sql).getSingleResult();
+            session.getTransaction().commit();
+            return score;
         }
         catch (Exception e) {
             e.printStackTrace();
