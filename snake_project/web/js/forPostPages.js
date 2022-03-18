@@ -11,6 +11,7 @@ function takeUserName() {
     }
     else {
         localStorage.getUsername = "";
+        document.getElementById("userSign").value = "";
     }
 
 }

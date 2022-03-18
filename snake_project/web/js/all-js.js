@@ -42,6 +42,7 @@ confirm_password.onkeyup = validatePassword;
 
 
 //test javaScript
+/*
 function test(){
     alert("is this happening?");
-}
+}*/

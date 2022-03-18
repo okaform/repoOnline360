@@ -70,3 +70,9 @@ for when the game is paused*/
 p.right-align {
     text-align: right;
 }
+
+/*This is for the form that will be invisible */
+
+form.form-scores {
+    display: none;
+}

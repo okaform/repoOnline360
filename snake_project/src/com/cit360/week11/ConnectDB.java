@@ -89,11 +89,11 @@ public class ConnectDB {
     }
 
     //get a single score
-    public ScoreTableEntity getScore(int id) {
+    public ScoreTableEntity getScore(String username) {
         try {
             session = factory.openSession();
             session.getTransaction().begin();
-            String sql = "from com.cit360.week11.ScoreTableEntity where id=" + Integer.toString(id);
+            String sql = "from com.cit360.week11.ScoreTableEntity where username=" + username;
             ScoreTableEntity score = (ScoreTableEntity)session.createQuery(sql).getSingleResult();
             session.getTransaction().commit();
             return score;

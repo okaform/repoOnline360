@@ -13,50 +13,27 @@ public class Servlet_Snake_Game extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
+        //do back end processing
         String username = request.getParameter("username");
         int curr_score = Integer.parseInt(request.getParameter("curr_score"));
         int high_score = Integer.parseInt(request.getParameter("high_score"));
 
+        //check with database. This updates the high score and current score of the user
+
+        boolean haveUpdated = ProcessScores.updateScores(username, curr_score, high_score);
 
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
-        out.println("<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
-                "<head>\n" +
-                "    <meta charset=\"UTF-8\">\n" +
-                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                "    <meta name=\"description\" content=\"A Work in Progress for Servlet\">\n" +
-                "    <link rel=\"stylesheet\" href=\"css/correct.css\">\n" +
-                "    <link rel=\"stylesheet\" href=\"css/style.css\">\n" +
-                "    <link rel=\"stylesheet\" href=\"css/forSnake-game.css\">\n" +
-                "    <link href=\"https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Ubuntu&display=swap\" rel=\"stylesheet\">\n" +
-                "    <title>Welcome to Marvel's Snake Game. </title>\n" +
-                "</head>\n" +
-                "<body>\n" +
-                "<div class=\"stickyContainer\">\n" +
-                "\n" +
-                "    <!--I got the resources for building this game here https://www.educative.io/blog/javascript-snake-game-tutorial-->\n" +
-                "    <h2> <span id=\"snake-game-theUser\">User</span> Welcome to Marvel's Snake Game. </h2>\n" +
-                "\n" +
-                "</div>\n" +
-                "<picture>\n" +
-                "    <img src=\"images/nintendo-crop.jpg\" alt=\"banner image\" />\n" +
-                "</picture>");
+
+        out.println(    "<script>" +
+                "window.location.href = \"http://localhost:8080/snake_project_war_exploded/snake_game\""+
+                "</script>" );
 
 
-        out.println("Did I get it?");
+        //TODO: do processing with the highscore then return back to the snake_game page
 
+        //TODO: I need to create a signout button so users can sign out
 
-        //footer
-        out.println("<footer>\n" +
-                "    <p>&copy; Simple Servlet - Marvellous Okafor</p>\n" +
-                "        <span>CIT 360 BYU - I</span>\n" +
-                "</footer>\n" +
-                "<script src=\"js/forPostPages.js\"></script>\n" +
-                "<script src=\"js/for-snake-game.js\"></script>\n" +
-                "<script src=\"js/score.js\"></script>\n" +
-                "</body>\n" +
-                "</html>");
 
     }
 
@@ -85,7 +62,7 @@ public class Servlet_Snake_Game extends HttpServlet {
                 "<picture>\n" +
                 "    <img src=\"images/nintendo-crop.jpg\" alt=\"banner image\" />\n" +
                 "</picture>");
-
+//TODO: I need to create a signout page
 
                 int highscore = 36;
 

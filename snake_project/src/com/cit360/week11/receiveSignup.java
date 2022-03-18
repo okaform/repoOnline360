@@ -89,6 +89,6 @@ public class receiveSignup extends HttpServlet {
         //even if you are using a POST, you need to have something here
         response.setContentType("text/html");
         PrintWriter out = response.getWriter(); //This basically builds the page
-        out.println("This resource is not available directly");
+        out.println("This resource is not available directly by Marvel");
     }
 }

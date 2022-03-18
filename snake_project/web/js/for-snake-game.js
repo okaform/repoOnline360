@@ -95,7 +95,10 @@ document.addEventListener("keydown", change_direction);
 function main() {
     //check if any of the variables in has_game_ended is true, then stop the game
     if (has_game_ended()) {
+        //shows the game has ended pop up
         document.getElementById("snake-game-popup").style.display = "block";
+        //put the score values into the form
+        putScoreValues();
         return;
     }
 
@@ -275,6 +278,14 @@ document.addEventListener('keyup', event => {
 
 //This function starts the game again after dying
 function startGameAgain() {
+    document.forms[0].submit();
+
+    //This reloads the page and starts the game again. It does the reload from cache
+    //document.location.reload(false);
+}
+
+//This function puts the score values into the form
+function putScoreValues() {
     //get the username
     username = document.getElementById("snake-game-theUser").innerText;
     //get the current score
@@ -287,10 +298,4 @@ function startGameAgain() {
     document.getElementById("snake-game-form-username").value = username;
     document.getElementById("snake-game-form-curr_score").value = curr_score;
     document.getElementById("snake-game-form-high-score").value = high_score;
-
-    document.forms[0].submit();
-
-    //This reloads the page and starts the game again. It does the reload from cache
-    //document.location.reload(false);
-
 }
