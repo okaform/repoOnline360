@@ -17,6 +17,7 @@ public class Servlet_Snake_Game extends HttpServlet {
         String username = request.getParameter("username");
         int curr_score = Integer.parseInt(request.getParameter("curr_score"));
         int high_score = Integer.parseInt(request.getParameter("high_score"));
+        int hasSignedOut = Integer.parseInt(request.getParameter("has_signedOut"));
 
         //check with database. This updates the high score and current score of the user
 
@@ -25,12 +26,32 @@ public class Servlet_Snake_Game extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
 
-        out.println(    "<script>" +
-                "window.location.href = \"http://localhost:8080/snake_project_war_exploded/snake_game\""+
-                "</script>" );
+        if (hasSignedOut == 0) {//If signout = 0, then it means that they clicked the sign out button
+            //close the session as well
+            //HibernateUtils.shutdown();
+            //don't forget to close sessions
+            out.println(    "<script>" +
+                    "window.location.href = \"http://localhost:8080/snake_project_war_exploded/\""+
+                    "</script>" );
+
+        }
+        else if (hasSignedOut == 2) {
+            out.println(    "<script>" +
+                    "window.location.href = \"http://localhost:8080/snake_project_war_exploded/high_score.html\""+
+                    "</script>" );
+        }
+        else {//anything else means that they clicked play again
+            out.println(    "<script>" +
+                    "window.location.href = \"http://localhost:8080/snake_project_war_exploded/snake_game\""+
+                    "</script>" );
+        }
+
+//if play again was pressed, then do this
 
 
-        //TODO: do processing with the highscore then return back to the snake_game page
+        //if signout was pressed, then go to the main page after ending sessions. we can do this by adding a value to the form. like 1 or 2
+
+        //TODO: do processing with the high score then return back to the snake_game page
 
         //TODO: I need to create a signout button so users can sign out
 
@@ -62,7 +83,6 @@ public class Servlet_Snake_Game extends HttpServlet {
                 "<picture>\n" +
                 "    <img src=\"images/nintendo-crop.jpg\" alt=\"banner image\" />\n" +
                 "</picture>");
-//TODO: I need to create a signout page
 
                 int highscore = 36;
 
@@ -71,9 +91,12 @@ public class Servlet_Snake_Game extends HttpServlet {
         out.println("<main>\n" +
                 "    <div id=\"snake-game-parent\">\n" +
                 "       <p class=\"right-align\">Score: <span id=\"snake-game-score\">0</span> </p>\n" +
-                "        <canvas id=\"snake-game-Canvas\" width=\"400\" height=\"400\"></canvas>\n" +
+                "        <canvas id=\"snake-game-Canvas\" width=\"400\" height=\"400\"></canvas>" +
+                "<div id=\"snake-game-highscore-container\">\n" +
                 "        <p>Highscore: <span id=\"snake-game-highscore\">"+highscore+"</span> </p>\n" +
-                "\n" +
+                "       <button id=\"snake-game-signout\" onclick=\"goToIndex()\">Sign Out</button>" +
+                "       <button class=\"snake-game-highscore\" onclick=\"goToHighScore()\">View High Scores</button>" +
+                "</div>\n" +
                 "    </div>\n" +
                 "\n" +
                 "\n" +
@@ -94,13 +117,14 @@ public class Servlet_Snake_Game extends HttpServlet {
                 "\n" +
                 "\n" +
                 "\n" +
-                "" +
+                //when we sign out, we need to submit the form and go to the main page.
                 "" +
                 "    <!--for sending the scores to the servlet-->\n" +
                 "        <form class=\"form-scores\"  name=\"form-scores\" action=\"snake_game\" method=\"post\">\n" +
                 "            <label>username*: <input type=\"text\" name=\"username\" id=\"snake-game-form-username\"></label>\n" +
-                "            <label>curr_score*: <input type=\"text\" name=\"curr_score\" id=\"snake-game-form-curr_score\" ></label>\n" +
-                "            <label>high_score*: <input type=\"text\" name=\"high_score\" id=\"snake-game-form-high-score\"></label>\n" +
+                "            <label>curr_score*: <input type=\"text\" value=\"0\" name=\"curr_score\" id=\"snake-game-form-curr_score\" ></label>\n" +
+                "            <label>high_score*: <input type=\"text\" value=\"0\" name=\"high_score\" id=\"snake-game-form-high-score\"></label>\n" +
+                "            <label>has_signedOut*: <input type=\"text\" value=\"0\" name=\"has_signedOut\" id=\"snake-game-form-has-signedOut\"></label>\n" +
                 "\n" +
                 "        </form>" +
 

@@ -58,6 +58,7 @@ public class receiveLogin extends HttpServlet {
             System.out.println("Wrong Username");
             out.println( "<script>" +
                     "//Go back to the previous page\n" +
+                    "alert(\"wrong username. Going Back\");" +
                     "window.history.go(-1);"+
                     "</script>" );
 
@@ -68,6 +69,7 @@ public class receiveLogin extends HttpServlet {
             System.out.println("The Password is wrong");
             out.println( "<script>" +
                     "//Go back to the previous page\n" +
+                    "alert(\"wrong password. Going Back\");" +
                     "window.history.go(-1);"+
                     "</script>" );
         }

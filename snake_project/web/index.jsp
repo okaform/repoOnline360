@@ -20,6 +20,8 @@
 <body onload="takeUserName()">
 <div class="stickyContainer">
 
+  <%--I got ideas from https://patorjk.com/games/snake/--%>
+
   <h2>Welcome to Marvel's Snake Game. Please Login or Create Account to play the game. </h2>
 
 </div>
@@ -30,8 +32,9 @@
 
     <div class="hold-account-info">
       <%--for login--%>
-      <button>Login</button>
-        <fieldset class="login">
+      <button id="war_exploded-login" onclick="displayLogin()">Login</button>
+        <button id="war_exploded-signup" onclick="displaySignUp()">Sign up</button>
+        <fieldset id="login">
           <legend>Login</legend>
           <form action="submitLogin" method="post">
             <label class="top">Username*: <input type="text" name="Lusername" required
@@ -43,12 +46,13 @@
           </form>
 
         </fieldset>
-    </div>
+
 
         <%--This is for signup--%>
-      <button>Sign up</button>
-      <fieldset class="signup">
+
+      <fieldset id="signup">
         <legend>Sign Up!</legend>
+
         <form action="submitSignup" method="post">
           <label class="top">First Name*: <input type="text" name="firstname" required pattern="[A-Za-z ]+" minlength="2"
                                                         title="You must have your first name. For example: James" ></label>
@@ -71,19 +75,19 @@
           <!-- An element to toggle between password visibility -->
           <input type="checkbox" onclick="showPasswd2()">Show Password
 
-            <input class="submitBtn-signup" type="submit" value="Sign Up!" >
+          <input class="submitBtn-signup" type="submit" value="Sign Up!" >
         </form>
 
         <%--<button type="submit">Confirm</button>--%>
       </fieldset>
-
+    </div>
 
 
 </main>
 
 
 <footer>
-  <p>&copy; Simple Servlet - Marvellous Okafor</p>
+  <p>&copy; Snake Game by Marvellous Okafor</p>
     <span>CIT 360 BYU - I</span>
 </footer>
 <script src="js/all-js.js"></script>

@@ -64,6 +64,7 @@ public class ProcessScores {
 
                 session.update(scores.get(i));
                 session.getTransaction().commit();
+                session.close();
                 break;
             }
         }

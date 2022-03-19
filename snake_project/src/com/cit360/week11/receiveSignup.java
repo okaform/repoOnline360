@@ -70,6 +70,7 @@ public class receiveSignup extends HttpServlet {
                             "window.location.href = \"http://localhost:8080/snake_project_war_exploded/\""+
                             "</script>" );
         }
+        //TODO: I still need to display a string of some sort when the user puts wrong password and username
 
         out.println("</main>\n" +
                 "\n" +

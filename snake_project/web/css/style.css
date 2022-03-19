@@ -9,9 +9,9 @@ h1, h2, h3, h4, h5, h6 { font-family: "Ubuntu", sans-serif; }
 p, span, a, button, form { font-family: "Comic Neue", cursive; }
 
 /* For the welcome container */
-.stickyContainer { background-color: #E7C24F;  position: fixed; left: 0; right: 0; z-index: 4; color: #F1FAEE; font-weight: bold; }
+.stickyContainer { background-color: #1D3557;  position: fixed; left: 0; right: 0; z-index: 4; color: antiquewhite; font-weight: bold; }
 
-.stickyContainer h2 { text-align: center;}
+.stickyContainer h2 { text-align: center; }
 
 
 main { width: 70%; margin: 0 auto; background-color: #F1FAEE; }
@@ -24,13 +24,13 @@ main hr { margin: 0 15%; }
 picture img { width: 100%; }
 
 /* THis is for the footer section */
-footer { margin: 0 auto; padding: 0; background-color: #E7C24F; padding: 5px; text-align: center; color: white; font-weight: bold; /* For the span so that it can change to inline when we are in medium view */ }
+footer { margin: 0 auto; padding: 0; background-color: #1D3557; padding: 5px; text-align: center; color: antiquewhite; font-weight: bold; /* For the span so that it can change to inline when we are in medium view */ }
 
-/* For the credit card form */
+/* For the sign up/sign in page */
 /*Form*/
 form fieldset { margin: 1.8em 0; border: 2px solid #454955; border-radius: 10px; background-color: #DCE1E9;  padding: .5rem 2%; }
 
-form legend { font-size: 1.3em; margin: 0 1rem; padding: 0 .5rem; }
+legend { font-size: 1.3em; margin: 0 1rem; padding: 0 .5rem; }
 
 form label.top { display: block; padding-top: 1em; font-size: 1em; }
 
@@ -61,10 +61,55 @@ form label#month select {font-size: 1em; grid-column: 1/2; }
 
 form label#year select { grid-column: 2/3; }
 
+input.submitBtn-login, input.submitBtn-signup {
+    margin-top: 0.9em;
+    display: block;
+}
+
 
 /*For the Project*/
 .hold-account-info {
-    margin-top: 4em;
+    margin-top: 1em;
+}
+
+button#war_exploded-login {
+    font-weight: bold;
+}
+
+fieldset#login {
+    width: 30%;
+}
+fieldset#signup {
+    display: none;
+    width: 30%;
+    margin-bottom: 0.5em;
+}
+
+button#snake-game-signout {
+    margin-top: 17em;
+}
+
+button.snake-game-highscore {
+    margin-left: 0.5em;
+/*    text-decoration: none;
+    background: lightgray;
+    padding: 0.1em 0.5em;
+    border: 1.5px solid black;*/
+}
+table {
+    margin: 0.5em 0;
+    width: 40%;
+    text-align: left;
+    border: 2px solid #1D3557;
+}
+
+th {
+    color: antiquewhite;
+    background-color: #1D3557;
+
+}
+td {
+    border-right: 2px solid #1D3557;
 }
 
 

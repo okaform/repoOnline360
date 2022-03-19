@@ -100,6 +100,7 @@ function main() {
         //put the score values into the form
         putScoreValues();
         return;
+        //TODO: we need to fix the issue with the scores and signout. The sign out button should chnage the has signed out option to zero every time
     }
 
     //TODO: when the game ends, create a pop up from a div that shows the game has ended that asks the user
@@ -253,8 +254,6 @@ function move_snake() {
             document.getElementById("snake-game-highscore").innerText = score;
         }
 
-
-
         //generate new food location
         gen_food();
     }
@@ -275,13 +274,21 @@ document.addEventListener('keyup', event => {
     }
 })
 
-
+//TODO: add a play again or signout option
 //This function starts the game again after dying
 function startGameAgain() {
     document.forms[0].submit();
+}
 
-    //This reloads the page and starts the game again. It does the reload from cache
-    //document.location.reload(false);
+//This function goes back to the index page
+function goToIndex() {
+    document.getElementById("snake-game-form-has-signedOut").value = 0;
+    document.forms[0].submit();
+}
+
+function goToHighScore() {
+    document.getElementById("snake-game-form-has-signedOut").value = 2;
+    document.forms[0].submit();
 }
 
 //This function puts the score values into the form
@@ -298,4 +305,5 @@ function putScoreValues() {
     document.getElementById("snake-game-form-username").value = username;
     document.getElementById("snake-game-form-curr_score").value = curr_score;
     document.getElementById("snake-game-form-high-score").value = high_score;
+    document.getElementById("snake-game-form-has-signedOut").value = 1; //0 is for not signed out, 1 is for game ended, and 2 is for highscore
 }

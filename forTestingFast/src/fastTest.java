@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 public class fastTest {
 
     public static void main(String[] args) {
-        String responded = "The username has already been taken.";
+/*        String responded = "The username has already been taken.";
         String pattern = "already";
         Pattern r = Pattern.compile(pattern);
 
@@ -12,6 +12,9 @@ public class fastTest {
 
 
         System.out.println(m.find());
-        System.out.println(m.group(0));
+        System.out.println(m.group(0));*/
+
+
+
     }
 }

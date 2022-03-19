@@ -18,4 +18,11 @@ function takeUserName() {
 
 //This is for the snake_game.html page.
 //onload();
-document.getElementById("snake-game-theUser").innerText = localStorage.getUsername;
+try {
+    document.getElementById("snake-game-theUser").innerText = localStorage.getUsername;
+}
+
+catch (e) {
+    console.log("Uncaught TypeError: Cannot set properties of null (setting 'innerText')");
+    console.log("This means that it can't find the property snake-game-theUser")
+}

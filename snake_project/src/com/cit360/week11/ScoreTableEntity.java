@@ -1,6 +1,7 @@
 package com.cit360.week11;
 
 import javax.persistence.*;
+import java.util.Comparator;
 import java.util.Objects;
 
 @Entity
@@ -75,5 +76,17 @@ public class ScoreTableEntity {
                 ", lastScore=" + lastScore +
                 ", highScore=" + highScore +
                 '}';
+    }
+
+    static class SortbyHighScore implements Comparator<ScoreTableEntity> { //this helps with sorting the high scores alphabetically
+        public int compare( ScoreTableEntity first, ScoreTableEntity second) {
+            if (first.getHighScore()==null) {
+                first.setHighScore(0);
+            }
+            if (second.getHighScore()==null) {
+                second.setHighScore(0);
+            }
+            return first.getHighScore() - second.getHighScore();
+        }
     }
 }

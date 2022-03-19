@@ -1,15 +1,10 @@
 package com.cit360.week11;
 
-import com.mysql.cj.jdbc.exceptions.SQLError;
 import org.hibernate.Session;
-import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
-import org.hibernate.engine.jdbc.spi.SqlStatementLogger;
-import org.hibernate.exception.ConstraintViolationException;
-import org.hibernate.exception.SQLGrammarException;
+
 
 import java.util.List;
 
-import static org.hibernate.engine.jdbc.spi.SqlExceptionHelper.*;
 
 public class ProcessUsers {
 //TODO: I need to turn off the unique attribute on the username database. It ignores case eg.(JAMES, james)
@@ -74,6 +69,8 @@ public class ProcessUsers {
 
                 //commit the transaction
                 session.getTransaction().commit();
+                //TODO add session.close
+        session.close();
 
         return returnMsg;
 

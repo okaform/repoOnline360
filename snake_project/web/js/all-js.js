@@ -46,3 +46,32 @@ confirm_password.onkeyup = validatePassword;
 function test(){
     alert("is this happening?");
 }*/
+
+//function that displays either the login or the sign up form
+function displayLogin() {
+    //TODO: make the login button be bolder so the user knows which one is being highlighted
+    //if one is displayed in block then switch it to the other.
+    if (document.getElementById("login").style.display === "" || document.getElementById("login").style.display === "none") {
+        //do change display to block
+        document.getElementById("login").style.display = "block";
+        document.getElementById("war_exploded-login").style.fontWeight = "bold";
+        //change/keep display of other fieldset as none
+        document.getElementById("signup").style.display = "none";
+        document.getElementById("war_exploded-signup").style.fontWeight = "normal";
+    }
+
+
+
+}
+
+function displaySignUp() {
+    //if display is empty or none
+    if (document.getElementById("signup").style.display === "" || document.getElementById("signup").style.display === "none") {
+        //do change display to block
+        document.getElementById("signup").style.display = "block";
+        document.getElementById("war_exploded-signup").style.fontWeight = "bold";
+        //change/keep display of other fieldset as none
+        document.getElementById("login").style.display = "none";
+        document.getElementById("war_exploded-login").style.fontWeight = "normal";
+    }
+}
