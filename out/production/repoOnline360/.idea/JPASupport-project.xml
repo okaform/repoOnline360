@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoGeneratorSettingsState">
+    <option name="ignoredFields">
+      <set>
+        <option value="" />
+      </set>
+    </option>
+    <option name="moduleName" value="Hibernate" />
+    <option name="moduleNameToSettings">
+      <map>
+        <entry key="Hibernate">
+          <value>
+            <ModuleSettings>
+              <option name="entityPackageName" value="com.cit360.week09" />
+              <option name="entityParentDirectory" value="$PROJECT_DIR$/Hibernate/src" />
+              <option name="repositoryPackageName" value="com.cit360.week09" />
+              <option name="repositoryParentDirectory" value="$PROJECT_DIR$/Hibernate/src" />
+            </ModuleSettings>
+          </value>
+        </entry>
+        <entry key="Servlet">
+          <value>
+            <ModuleSettings />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

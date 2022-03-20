@@ -1,0 +1,78 @@
+
+
+/*for the snakeboard*/
+#snake-game-Canvas {
+    display: block;
+    margin: 0 auto;
+    grid-column: 2/3;
+/*    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+#score {
+    text-align: center;
+    font-size: 2em;
+}
+
+/*for when the game ends*/
+#snake-game-popup {
+    background-color: bisque;
+    color: black;
+    padding: 0.5em;
+    width: 13%;
+    display: none;
+    z-index: 4;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 1.3em;
+    position: absolute;
+    top: 65%;
+    left: 42%;
+}
+#snake-game-popup .snake-game-container {
+    margin: 0 auto;
+
+}
+
+/*
+for when the game is paused*/
+
+#snake-game-paused {
+    background-color: bisque;
+    color: black;
+    padding: 0.5em;
+    width: 13%;
+    display: none;
+    z-index: 4;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 1.3em;
+    position: absolute;
+    top: 75%;
+    left: 42%;
+}
+
+/*For the game canvas, the score and high score*/
+#snake-game-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+#snake-game-score {
+    grid-column: 1/2;
+}
+#snake-game-highscore {
+    grid-column: 3/4;
+}
+
+p.right-align {
+    text-align: right;
+}
+
+/*This is for the form that will be invisible */
+
+form.form-scores {
+    display: none;
+}

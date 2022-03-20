@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Hibernate/Hibernate.iml" filepath="$PROJECT_DIR$/Hibernate/Hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/HibernateDB/HibernateDB.iml" filepath="$PROJECT_DIR$/HibernateDB/HibernateDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/JUnit/JUnit.iml" filepath="$PROJECT_DIR$/JUnit/JUnit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServHiberTemplate/ServHiberTemplate.iml" filepath="$PROJECT_DIR$/ServHiberTemplate/ServHiberTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseCase/UseCase.iml" filepath="$PROJECT_DIR$/UseCase/UseCase.iml" />
       <module fileurl="file://$PROJECT_DIR$/database1/database1.iml" filepath="$PROJECT_DIR$/database1/database1.iml" />
