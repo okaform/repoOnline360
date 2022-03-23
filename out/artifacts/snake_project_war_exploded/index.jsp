@@ -20,6 +20,8 @@
 <body onload="takeUserName()">
 <div class="stickyContainer">
 
+  <%--I got ideas from https://patorjk.com/games/snake/--%>
+
   <h2>Welcome to Marvel's Snake Game. Please Login or Create Account to play the game. </h2>
 
 </div>
